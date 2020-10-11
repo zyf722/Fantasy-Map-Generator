@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azgaar's Fantasy Map Generator</title>
-  <meta name="application-name" content="Azgaar's Fantasy Map Generator">
+  <title>Azgaar 的幻想地图生成器</title>
+  <meta name="application-name" content="Azgaar 的幻想地图生成器">
   <meta name="author" content="Azgaar (Max Ganiev)">
-  <meta name="description" content="Azgaar's Fantasy Map Generator and Editor">
+  <meta name="description" content="Azgaar 的幻想地图生成器与编辑器">
   <meta name="google" content="notranslate">
   <meta name="google-site-verification" content="6N9TRdPptDN1dCZKaMA5zJ-_UmNQE-3c4VizSlQcEeU"/>
   <meta property="og:url" content="https://azgaar.github.io/Fantasy-Map-Generator">
-  <meta property="og:title" content="Azgaar's Fantasy Map Generator">
-  <meta property="og:description" content="Web application generating interactive and customizable maps">
+  <meta property="og:title" content="Azgaar 的幻想地图生成器">
+  <meta property="og:description" content="方便而快捷地生成交互式地图！">
   <meta property="og:image" content="images/preview.png">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32"/>
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16"/>
@@ -897,142 +897,141 @@
   </svg>
 
   <div id="loading">
-    <div id="titleName"><t data-t="titleName">Azgaar's</t></div>
-    <div id="title"><t data-t="title">Fantasy Map Generator</t></div>
+    <div id="titleName"><t data-t="titleName">Azgaar 的</t></div>
+    <div id="title"><t data-t="title">幻想地图生成器</t></div>
     <div id="version"><t data-t="version">v. </t>1.4</div>
-    <p id="loading-text"><t data-t="loading">LOADING</t><span>.</span><span>.</span><span>.</span></p>
+    <p id="loading-text"><t data-t="loading">载入中</t><span>.</span><span>.</span><span>.</span></p>
   </div>
 
   <div id="optionsContainer" style="opacity:0">
 
     <div id="collapsible">
-      <button id="optionsTrigger" data-t="tipOptionsTrigger" data-tip="Click to show options pane. Shortcut: Tab" class="options glow" onclick="showOptions(event)" style="padding:.6em .45em">►</button>
-      <button id="regenerate" data-t="tipRegenerate" data-tip="Click to generate a new map. Shortcut: F2" onclick="regeneratePrompt()" class="options" style="display:none; padding:.6em 1em"><t data-t="newMap">New Map!</t></button>
+      <button id="optionsTrigger" data-t="tipOptionsTrigger" data-tip="单击以显示选项面板。 (Tab)" class="options glow" onclick="showOptions(event)" style="padding:.6em .45em">►</button>
+      <button id="regenerate" data-t="tipRegenerate" data-tip="单击以创建新地图。 (F2)" onclick="regeneratePrompt()" class="options" style="display:none; padding:.6em 1em"><t data-t="newMap">新建地图！</t></button>
     </div>
 
     <div id="options" style="display:none">
-      <div class="drag-trigger" data-t="optionsDragTrigger" data-tip="Drag to move options pane"></div>
+      <div class="drag-trigger" data-t="optionsDragTrigger" data-tip="拖动以移动选项面板。"></div>
 
       <div class="tab">
-        <button id="optionsHide" data-t="optionsHide" data-tip="Click to hide options pane. Shortcut: Tab to close this or Esc to close all dialogs" class="options" onclick="hideOptions(event)">◄</button>
-        <button id="layersTab" data-t="layersTab" data-tip="Click to change map layers" class="options active"><t data-t="layers">Layers</t></button>
-        <button id="styleTab" data-t="styleTab" data-tip="Click to open style editor" class="options"><t data-t="style">Style</t></button>
-        <button id="optionsTab" data-t="optionsTab" data-tip="Click to change generation and UI options" class="options"><t data-t="options">Options</t></button>
-        <button id="toolsTab" data-t="toolsTab" data-tip="Click to open tools menu" class="options"><t data-t="tools">Tools</t></button>
-        <button id="aboutTab" data-t="aboutTab" data-tip="Click to see Generator info" class="options"><t data-t="about">About</t></button>
+        <button id="optionsHide" data-t="optionsHide" data-tip="单击以隐藏选项面板。 (Tab 关闭此对话框 / Esc 关闭所有对话框)" class="options" onclick="hideOptions(event)">◄</button>
+        <button id="layersTab" data-t="layersTab" data-tip="单击以修改图层。" class="options active"><t data-t="layers">图层</t></button>
+        <button id="styleTab" data-t="styleTab" data-tip="单击以打开样式编辑器。" class="options"><t data-t="style">样式</t></button>
+        <button id="optionsTab" data-t="optionsTab" data-tip="单击以更改生成和 UI 相关选项。" class="options"><t data-t="options">选项</t></button>
+        <button id="toolsTab" data-t="toolsTab" data-tip="单击以打开工具菜单。" class="options"><t data-t="tools">工具</t></button>
+        <button id="aboutTab" data-t="aboutTab" data-tip="单击查看本生成器的有关信息。" class="options"><t data-t="about">关于</t></button>
       </div>
 
       <div id="layersContent" class="tabcontent" style="display: block">
-        <p data-tip="Select a map layers preset" style="display: inline-block;">Layers preset:</p>
-        <select data-tip="Select a map layers preset" id="layersPreset" onchange="changePreset(this.value)" style="width:45%">
-          <option value="political" selected>Political map</option>
-          <option value="cultural">Cultural map</option>
-          <option value="religions">Religions map</option>
-          <option value="provinces">Provinces map</option>
-          <option value="biomes">Biomes map</option>
-          <option value="heightmap">Heightmap</option>
-          <option value="physical">Physical map</option>
-          <option value="poi">Places of interest</option>
-          <option value="military">Military map</option>
-          <option value="landmass">Pure landmass</option>
-          <option hidden value="custom">Custom (not saved)</option>
+        <p data-tip="请选择一个地图图层预设。" style="display: inline-block;">图层预设：</p>
+        <select data-tip="请选择一个地图图层预设。" id="layersPreset" onchange="changePreset(this.value)" style="width:45%">
+          <option value="political" selected>政治地图</option>
+          <option value="cultural">文化地图</option>
+          <option value="religions">宗教地图</option>
+          <option value="provinces">省份地图</option>
+          <option value="biomes">生物群系地图</option>
+          <option value="heightmap">高度图</option>
+          <option value="physical">实物图</option>
+          <option value="poi">名胜古迹</option>
+          <option value="military">军事地图</option>
+          <option value="landmass">纯地块</option>
+          <option hidden value="custom">自定义 (未保存)</option>
         </select>
-        <button id="savePresetButton" data-tip="Click to save displayed layers as a new preset" class="icon-plus presetButton" style="display:none" onclick="savePreset()"></button>
-        <button id="removePresetButton" data-tip="Click to remove current custom preset" class="icon-minus presetButton" style="display:none" onclick="removePreset()"></button>
+        <button id="savePresetButton" data-tip="单击以另存为新预设。" class="icon-plus presetButton" style="display:none" onclick="savePreset()"></button>
+        <button id="removePresetButton" data-tip="单击以移除当前自定义预设。" class="icon-minus presetButton" style="display:none" onclick="removePreset()"></button>
 
-        <p data-tip="Click to toggle a layer, drag to raise or lower a layer. Ctrl + click to edit layer style">Displayed layers and layers order:</p>
-        <ul data-tip="Click to toggle a layer, drag to raise or lower a layer. Ctrl + click to edit layer style" id="mapLayers">
-          <li id="toggleTexture" data-tip="Texture overlay: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: X" class="buttonoff" onclick="toggleTexture(event)">Te<u>x</u>ture</li>
-          <li id="toggleHeight" data-tip="Heightmap: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: H" class="buttonoff" onclick="toggleHeight(event)"><u>H</u>eightmap</li>
-          <li id="toggleBiomes" data-tip="Biomes: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: B" class="buttonoff" onclick="toggleBiomes(event)"><u>B</u>iomes</li>
-          <li id="toggleCells" data-tip="Cells structure: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: E" class="buttonoff" onclick="toggleCells(event)">C<u>e</u>lls</li>
-          <li id="toggleGrid" data-tip="Grid: click to toggle, drag to raise or lower. Select type in styles dropdown below. Ctrl + click to edit layer style. Shortcut: G" class="buttonoff" onclick="toggleGrid(event)"><u>G</u>rid</li>
-          <li id="toggleCoordinates" data-tip="Coordinate grid: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: O" class="buttonoff" onclick="toggleCoordinates(event)">C<u>o</u>ordinates</li>
-          <li id="toggleCompass" data-tip="Wind (Compass) Rose: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: W" class="buttonoff" onclick="toggleCompass(event)"><u>W</u>ind Rose</li>
-          <li id="toggleRivers" data-tip="Rivers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: V" onclick="toggleRivers(event)">Ri<u>v</u>ers</li>
-          <li id="toggleRelief" data-tip="Relief and biome icons: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: F" class="buttonoff" onclick="toggleRelief(event)">Relie<u>f</u></li>
-          <li id="toggleReligions" data-tip="Religions: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: R" class="buttonoff" onclick="toggleReligions(event)"><u>R</u>eligions</li>
-          <li id="toggleCultures" data-tip="Cultures: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: C" class="buttonoff" onclick="toggleCultures(event)"><u>C</u>ultures</li>
-          <li id="toggleStates" data-tip="States: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: S" onclick="toggleStates(event)"><u>S</u>tates</li>
-          <li id="toggleProvinces" data-tip="Provinces: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: P" class="buttonoff" onclick="toggleProvinces(event)"><u>P</u>rovinces</li>
-          <li id="toggleZones" data-tip="Zones: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: Z" class="buttonoff" onclick="toggleZones(event)"><u>Z</u>ones</li>
-          <li id="toggleBorders" data-tip="State borders: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: D" onclick="toggleBorders(event)">Bor<u>d</u>ers</li>
-          <li id="toggleRoutes"data-tip="Trade routes: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: U" onclick="toggleRoutes(event)">Ro<u>u</u>tes</li>
-          <li id="toggleTemp" data-tip="Temperature map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: T" class="buttonoff" onclick="toggleTemp(event)"><u>T</u>emperature</li>
-          <li id="togglePopulation" data-tip="Population map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: N" class="buttonoff" onclick="togglePopulation(event)">Populatio<u>n</u></li>
-          <li id="toggleIce" data-tip="Icebergs and glaciers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: J" class="buttonoff" onclick="toggleIce(event)">Ice</li>
-          <li id="togglePrec" data-tip="Precipitation map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: A" class="buttonoff" onclick="togglePrec(event)">Precipit<u>a</u>tion</li>
-          <li id="toggleLabels" data-tip="Labels: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: L" onclick="toggleLabels(event)"><u>L</u>abels</li>
-          <li id="toggleIcons" data-tip="Burg icons: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: I" onclick="toggleIcons(event)"><u>I</u>cons</li>
-          <li id="toggleMilitary" data-tip="Military forces: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: M" class="buttonoff" onclick="toggleMilitary(event)"><u>M</u>ilitary</li>
-          <li id="toggleMarkers" data-tip="Markers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style. Shortcut: K" class="buttonoff" onclick="toggleMarkers(event)">Mar<u>k</u>ers</li>
-          <li id="toggleRulers" data-tip="Rulers: click to toggle, drag to move, click on label to delete. Ctrl + click to edit layer style. Shortcut: = (equal)" class="buttonoff" onclick="toggleRulers(event)">Rulers</li>
-          <li id="toggleScaleBar" data-tip="Scale Bar: click to toggle. Ctrl + click to edit style. Shortcut: - (minus)" onclick="toggleScaleBar(event)" class="solid">Scale Bar</li>
+        <p data-tip="单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式)">当前图层：</p>
+        <ul data-tip="单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式)" id="mapLayers">
+          <li id="toggleTexture" data-tip="纹理层：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (X)" class="buttonoff" onclick="toggleTexture(event)">纹理层(<u>X</u>)</li>
+          <li id="toggleHeight" data-tip="高度图：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (H)" class="buttonoff" onclick="toggleHeight(event)">高度图(<u>H</u>)</li>
+          <li id="toggleBiomes" data-tip="生物群系：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (B)" class="buttonoff" onclick="toggleBiomes(event)">生物群系(<u>B</u>)</li>
+          <li id="toggleCells" data-tip="单元格：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (E)" class="buttonoff" onclick="toggleCells(event)">单元格(<u>E</u>)</li>
+          <li id="toggleGrid" data-tip="网格：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (G)" class="buttonoff" onclick="toggleGrid(event)">网格(<u>G</u>)</li>
+          <li id="toggleCoordinates" data-tip="坐标网格：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (O)" class="buttonoff" onclick="toggleCoordinates(event)">坐标网格(<u>O</u>)</li>
+          <li id="toggleCompass" data-tip="风玫瑰图：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (W)" class="buttonoff" onclick="toggleCompass(event)">风玫瑰图(<u>W</u>)</li>
+          <li id="toggleRivers" data-tip="河流：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (V)" onclick="toggleRivers(event)">河流(<u>V</u>)</li>
+          <li id="toggleRelief" data-tip="装饰图案：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (F)" class="buttonoff" onclick="toggleRelief(event)">装饰图案(<u>F</u>)</li>
+          <li id="toggleReligions" data-tip="宗教：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (R)" class="buttonoff" onclick="toggleReligions(event)">宗教(<u>R</u>)</li>
+          <li id="toggleCultures" data-tip="文化：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (C)" class="buttonoff" onclick="toggleCultures(event)">文化(<u>C</u>)</li>
+          <li id="toggleStates" data-tip="国家：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (S)" onclick="toggleStates(event)">国家(<u>S</u>)</li>
+          <li id="toggleProvinces" data-tip="省份：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (P)" class="buttonoff" onclick="toggleProvinces(event)">省份(<u>P</u>)</li>
+          <li id="toggleZones" data-tip="区域：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (Z)" class="buttonoff" onclick="toggleZones(event)">区域(<u>Z</u>)</li>
+          <li id="toggleBorders" data-tip="国境线：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (D)" onclick="toggleBorders(event)">国境线(<u>D</u>)</li>
+          <li id="toggleRoutes"data-tip="贸易路线：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (U)" onclick="toggleRoutes(event)">贸易(<u>U</u>)</li>
+          <li id="toggleTemp" data-tip="等温线图：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (T)" class="buttonoff" onclick="toggleTemp(event)">等温线图(<u>T</u>)</li>
+          <li id="togglePopulation" data-tip="人口图：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (N)" class="buttonoff" onclick="togglePopulation(event)">人口图(<u>N</u>)</li>
+          <li id="toggleIce" data-tip="冰川：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (J)" class="buttonoff" onclick="toggleIce(event)">冰川(<u>J</u>)</li>
+          <li id="togglePrec" data-tip="降水图：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (A)" class="buttonoff" onclick="togglePrec(event)">降水图(<u>A</u>)</li>
+          <li id="toggleLabels" data-tip="标签：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (L)" onclick="toggleLabels(event)">标签(<u>L</u>)</li>
+          <li id="toggleIcons" data-tip="城市：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (I)" onclick="toggleIcons(event)">城市(<u>I</u>)</li>
+          <li id="toggleMilitary" data-tip="军队：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (M)" class="buttonoff" onclick="toggleMilitary(event)">军队(<u>M</u>)</li>
+          <li id="toggleMarkers" data-tip="标记：单击以显示/隐藏图层，拖动以改变图层顺序。 (按住 Ctrl 并单击以编辑图层样式) (K)" class="buttonoff" onclick="toggleMarkers(event)">标记(<u>K</u>)</li>
+          <li id="toggleRulers" data-tip="标尺：单击以显示/隐藏图层，拖动以改变图层顺序。 (单击标尺以删除，按住 Ctrl 并单击以编辑图层样式) (=)" class="buttonoff" onclick="toggleRulers(event)">标尺(=)</li>
+          <li id="toggleScaleBar" data-tip="比例尺：单击以显示/隐藏图层。 (按住 Ctrl 并单击以编辑图层样式) (-)" onclick="toggleScaleBar(event)" class="solid">比例尺(-)</li>
         </ul>
 
-        <div id="viewMode" data-tip="Set view node">
-          <p>View mode:</p>
-          <button data-tip="Standard view mode that allows to edit the map" id="viewStandard" class="pressed">Standard</button>
-          <button data-tip="Map presentation in 3D scene. Works best for heightmap. Cannot be used for editing" id="viewMesh">3D scene</button>
-          <button data-tip="Project map on globe. Cannot be used for editing" id="viewGlobe">Globe</button>
+        <div id="viewMode" data-tip="设置视图：">
+          <p>当前视图：</p>
+          <button data-tip="允许编辑地图的标准视图。" id="viewStandard" class="pressed">标准视图</button>
+          <button data-tip="能够直观表示高度图的三维视图。无法编辑。" id="viewMesh">三维视图</button>
+          <button data-tip="球体投影视图。无法编辑。" id="viewGlobe">球体投影视图</button>
         </div>
       </div>
 
       <div id="styleContent" class="tabcontent">
-        <p data-tip="Select a style preset" style="display: inline-block">Style preset:</p>
-        <select data-tip="Select a style preset" id="stylePreset" onchange="changeStylePreset(this.value)" style="width:45%">
-          <option value="styleDefault" data-system=1 selected>Default</option>
-          <option value="styleAncient" data-system=1>Ancient</option>
-          <option value="styleGloom" data-system=1>Gloom</option>
-          <option value="styleClean" data-system=1>Clean</option>
-          <option value="styleMonochrome" data-system=1>Monochrome (for heightmap)</option>
+        <p data-tip="请选择一个样式预设。" style="display: inline-block">样式预设：</p>
+        <select data-tip="请选择一个样式预设。" id="stylePreset" onchange="changeStylePreset(this.value)" style="width:45%">
+          <option value="styleDefault" data-system=1 selected>默认</option>
+          <option value="styleAncient" data-system=1>古式</option>
+          <option value="styleGloom" data-system=1>暗色</option>
+          <option value="styleClean" data-system=1>简约</option>
+          <option value="styleMonochrome" data-system=1>灰度 (适用于高度图)</option>
         </select>
-        <button id="addStyleButton" data-tip="Click to save current style as a new preset" class="icon-plus styleButton" style="display: inline-block" onclick="addStylePreset()"></button>
-        <button id="removeStyleButton" data-tip="Click to remove current custom style preset" class="icon-minus styleButton" style="display: none" onclick="removeStylePreset()"></button>
-
-        <p data-tip="Select an element to edit its style" style="display: inline-block;">Select element:</p>
-        <select data-tip="Select an element to edit its style (list is ordered alphabetically)" id="styleElementSelect" style="width:42%">
-          <option value="anchors">Anchor Icons</option>
-          <option value="biomes">Biomes</option>
-          <option value="borders">Borders</option>
-          <option value="burgIcons">Burg Icons</option>
-          <option value="cells">Cells</option>
-          <option value="coastline">Coastline</option>
-          <option value="coordinates">Coordinates</option>
-          <option value="cults">Cultures</option>
-          <option value="fogging">Fogging</option>
-          <option value="gridOverlay">Grid</option>
-          <option value="terrs">Heightmap</option>
-          <option value="ice">Ice</option>
-          <option value="labels">Labels</option>
-          <option value="lakes">Lakes</option>
-          <option value="landmass">Landmass</option>
-          <option value="legend">Legend</option>
-          <option value="markers">Markers</option>
-          <option value="armies">Military</option>
-          <option value="ocean">Ocean</option>
-          <option value="population">Population</option>
-          <option value="prec">Precipitation</option>
-          <option value="provs">Provinces</option>
-          <option value="terrain">Relief Icons</option>
-          <option value="relig">Religions</option>
-          <option value="rivers">Rivers</option>
-          <option value="routes">Routes</option>
-          <option value="ruler">Rulers</option>
-          <option value="regions" selected>States</option>
-          <option value="temperature">Temperature</option>
-          <option value="texture">Texture</option>
-          <option value="compass">Wind Rose</option>
-          <option value="zones">Zones</option>
+        <button id="addStyleButton" data-tip="单击以将当前样式另存为新预设。" class="icon-plus styleButton" style="display: inline-block" onclick="addStylePreset()"></button>
+        <button id="removeStyleButton" data-tip="单击以移除当前自定义预设。" class="icon-minus styleButton" style="display: none" onclick="removeStylePreset()"></button><br>
+        <p data-tip="选择一个图层以编辑其样式。" style="display: inline-block;">选择图层：</p>
+        <select data-tip="选择一个图层以编辑其样式。" id="styleElementSelect" style="width:42%">
+          <option value="anchors">港口图标</option>
+          <option value="biomes">生物群系</option>
+          <option value="borders">国境线</option>
+          <option value="burgIcons">城市图标</option>
+          <option value="cells">单元格</option>
+          <option value="coastline">海岸线</option>
+          <option value="coordinates">坐标网格</option>
+          <option value="cults">文化</option>
+          <option value="fogging">雾</option>
+          <option value="gridOverlay">网格</option>
+          <option value="terrs">高度图</option>
+          <option value="ice">冰川</option>
+          <option value="labels">标签</option>
+          <option value="lakes">湖泊</option>
+          <option value="landmass">地块</option>
+          <option value="legend">传说</option>
+          <option value="markers">标记</option>
+          <option value="armies">军队</option>
+          <option value="ocean">海洋</option>
+          <option value="population">人口</option>
+          <option value="prec">降水</option>
+          <option value="provs">省份</option>
+          <option value="terrain">装饰图案</option>
+          <option value="relig">宗教</option>
+          <option value="rivers">河流</option>
+          <option value="routes">贸易路线</option>
+          <option value="ruler">标尺</option>
+          <option value="regions" selected>国家</option>
+          <option value="temperature">等温线</option>
+          <option value="texture">纹理</option>
+          <option value="compass">风玫瑰图</option>
+          <option value="zones">区域</option>
         </select>
         <!-- <button id="restoreStyle" data-tip="Click to restore default style for all elements" class="icon-ccw styleButton" onclick="askToRestoreDefaultStyle()"></button> -->
 
         <table id="styleElements">
-          <caption id="styleIsOff" data-tip="The selected layer is not visible. See the buttons above to toggle it on">Please ensure the element is toggled on!</caption>
+          <caption id="styleIsOff" data-tip="选定图层不可见。请调整该图层显示状态。">请确保选定图层可见！</caption>
 
           <tbody id="styleGroup">
-            <tr data-tip="Select element group">
-              <td><b>Group</b></td>
+            <tr data-tip="请选择一个组。">
+              <td><b>组</b></td>
               <td>
                 <select id="styleGroupSelect"><option value="regions">regions</option></select>
               </td>
@@ -1040,8 +1039,8 @@
           </tbody>
 
           <tbody id="styleOpacity" style="display: block">
-            <tr data-tip="Set opacity. 0: transparent, 1: solid">
-              <td>Opacity</td>
+            <tr data-tip="设置不透明度。(0：完全透明；1：完全不透明)">
+              <td>不透明度</td>
               <td>
                 <input id="styleOpacityInput" type="range" min=0 max=1 step=0.01 value=.4>
                 <output id="styleOpacityOutput">0.4</output>
@@ -1050,16 +1049,16 @@
           </tbody>
 
           <tbody id="styleStates" style="display: block">
-            <tr data-tip="Set states halo effect width">
-              <td>Halo width</td>
+            <tr data-tip="设置国家图层的光晕宽度。">
+              <td>光晕宽度</td>
               <td>
                 <input id="styleStatesHaloWidth" type="range" min=0 max=30 step=.1 value=10>
                 <output id="styleStatesHaloWidthOutput">10</output>
               </td>
             </tr>
 
-            <tr data-tip="Set states halo effect opacity. 0: invisible, 1: solid">
-              <td>Halo opacity</td>
+            <tr data-tip="设置国家图层的光晕不透明度。(0：完全透明；1：完全不透明)">
+              <td>光晕不透明度</td>
               <td>
                 <input id="styleStatesHaloOpacity" type="range" min=0 max=1 step=0.01 value=1>
                 <output id="styleStatesHaloOpacityOutput">1</output>
@@ -1068,24 +1067,24 @@
           </tbody>
 
           <tbody id="styleLegend">
-            <tr data-tip="Set maximum number of items in one column">
-              <td>Column items</td>
+            <tr data-tip="设置一每列中的最大项数。">
+              <td>每列项数</td>
               <td>
                 <input id="styleLegendColItems" type="range" min=1 max=30 step=1 value=8>
                 <output id="styleLegendColItemsOutput">8</output>
               </td>
             </tr>
 
-            <tr data-tip="Set background color">
-              <td>Background</td>
+            <tr data-tip="设置背景色。">
+              <td>背景色</td>
               <td>
                 <input id="styleLegendBack" type="color" value="#ffffff"/>
                 <output id="styleLegendBackOutput">#ffffff</output>
               </td>
             </tr>
 
-            <tr data-tip="Set background opacity">
-              <td>Opacity</td>
+            <tr data-tip="设置背景不透明度。">
+              <td>不透明度</td>
               <td>
                 <input id="styleLegendOpacity" type="range" min=0 max=1 step=0.01 value=1>
                 <output id="styleLegendOpacityOutput">1</output>
@@ -1094,16 +1093,16 @@
           </tbody>
 
           <tbody id="stylePopulation">
-            <tr data-tip="Set bar color for rural population">
-              <td>Rural color</td>
+            <tr data-tip="设置条状图中农村地区人口代表色。">
+              <td>农村色</td>
               <td>
                 <input id="stylePopulationRuralStrokeInput" type="color" value="#0000ff"/>
                 <output id="stylePopulationRuralStrokeOutput">#0000ff</output>
               </td>
             </tr>
 
-            <tr data-tip="Set bar color for urban population">
-              <td>Urban color</td>
+            <tr data-tip="设置条状图中城市地区人口代表色。">
+              <td>城市色</td>
               <td>
                 <input id="stylePopulationUrbanStrokeInput" type="color" value="#ff0000"/>
                 <output id="stylePopulationUrbanStrokeOutput">#ff0000</output>
@@ -1112,86 +1111,86 @@
           </tbody>
 
           <tbody id="styleTexture">
-            <tr data-tip="Select texture image. Big textures can highly affect performance">
-              <td>Image</td>
+            <tr data-tip="设置纹理图案。尺寸较大的纹理将会对性能产生一定影响。">
+              <td>图案</td>
               <td>
                 <select id="styleTextureInput">
-                  <option value="none">None</option>
-                  <option value="default" selected>Default</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/marble-big.jpg">Marble big</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/marble-blue-small.jpg">Marble Blue</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/marble-blue-big.jpg">Marble Blue big</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/stone-small.jpg">Stone small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/stone-big.jpg">Stone big</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/timbercut-small.jpg">Timber Cut small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/timbercut-big.jpg">Timber Cut big</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/antique-small.jpg">Antique small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/antique-big.jpg">Antique big</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/pergamena-small.jpg">Pergamena small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mars-small.jpg">Mars small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mars-big.jpg">Mars big</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mercury-small.jpg">Mercury small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mercury-big.jpg">Mercury big</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mauritania-small.jpg">Mauritania small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/iran-small.jpg">Iran small</option>
-                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/spain-small.jpg">Spain small</option>
+                  <option value="none">无</option>
+                  <option value="default" selected>默认</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/marble-big.jpg">大理石 - 大尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/marble-blue-small.jpg">大理石 - 蓝</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/marble-blue-big.jpg">大理石 - 蓝&大尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/stone-small.jpg">岩石 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/stone-big.jpg">岩石 - 大尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/timbercut-small.jpg">木头 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/timbercut-big.jpg">木头 - 大尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/antique-small.jpg">古董 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/antique-big.jpg">古董 - 大尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/pergamena-small.jpg">羊皮纸 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mars-small.jpg">火星 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mars-big.jpg">火星 - 大尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mercury-small.jpg">水星 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mercury-big.jpg">水星 - 大尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/mauritania-small.jpg">毛里塔尼亚 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/iran-small.jpg">伊朗 - 小尺寸</option>
+                  <option value="https://i2.wp.com/azgaar.files.wordpress.com/2019/07/spain-small.jpg">西班牙 - 小尺寸</option>
                 </select>
-                <button data-tip="Click and provide a URL to image to be set as a texture" class="icon-plus styleButton" onclick="textureProvideURL()"></button>
+                <button data-tip="单击以通过URL上传自定义纹理图案。" class="icon-plus styleButton" onclick="textureProvideURL()"></button>
               </td>
             </tr>
 
-            <tr data-tip="Shift the texture by axes">
-              <td>Shift by axes</td>
+            <tr data-tip="基于轴线平移纹理。">
+              <td>基于轴线偏移量</td>
               <td>
-                <input id="styleTextureShiftX" type="number" value=0 data-tip="Shift texture by x axis in pixels">
-                <input id="styleTextureShiftY" type="number" value=0 data-tip="Shift texture by y axis in pixels">
+                <input id="styleTextureShiftX" type="number" value=0 data-tip="基于x轴平移纹理。">
+                <input id="styleTextureShiftY" type="number" value=0 data-tip="基于y轴平移纹理。">
               </td>
             </tr>
 
           </tbody>
 
           <tbody id="styleOcean">
-            <tr data-tip="Select ocean pattern">
-              <td>Pattern</td>
+            <tr data-tip="设置海洋图案。">
+              <td>图案</td>
               <td>
                 <select id="styleOceanPattern">
-                  <option value="url(#emptyImage)">No pattern</option>
-                  <option value="url(#mottling)" chacked>Mottling</option>
-                  <option value="url(#pattern1)" chacked>Pattern 1</option>
-                  <option value="url(#pattern2)" chacked>Pattern 2</option>
-                  <option value="url(#pattern3)" chacked>Pattern 3</option>
-                  <option value="url(#pattern4)" chacked>Pattern 4</option>
-                  <option value="url(#pattern5)" chacked>Pattern 5</option>
-                  <option value="url(#pattern6)" chacked>Pattern 6</option>
+                  <option value="url(#emptyImage)">无图案</option>
+                  <option value="url(#mottling)" chacked>杂色</option>
+                  <option value="url(#pattern1)" chacked>图案 1</option>
+                  <option value="url(#pattern2)" chacked>图案 2</option>
+                  <option value="url(#pattern3)" chacked>图案 3</option>
+                  <option value="url(#pattern4)" chacked>图案 4</option>
+                  <option value="url(#pattern5)" chacked>图案 5</option>
+                  <option value="url(#pattern6)" chacked>图案 6</option>
                 </select>
               </td>
             </tr>
 
-            <tr data-tip="Define the coast outline contours scheme">
-              <td>Ocean layers</td>
+            <tr data-tip="设置海洋层级样式。">
+              <td>层级样式</td>
               <td>
                 <select id="outlineLayers">
-                  <option value="none">No outline</option>
-                  <option value="random">Random</option>
-                  <option value="-6,-3,-1" selected>Standard 3</option>
-                  <option value="-6,-4,-2">Indented 3</option>
-                  <option value="-9,-6,-3,-1">Standard 4</option>
-                  <option value="-6,-5,-4,-3,-2,-1">Smooth 6</option>
-                  <option value="-9,-8,-7,-6,-5,-4,-3,-2,-1">Smooth 9</option>
+                  <option value="none">无层级</option>
+                  <option value="random">随机</option>
+                  <option value="-6,-3,-1" selected>标准 3</option>
+                  <option value="-6,-4,-2">交错 3</option>
+                  <option value="-9,-6,-3,-1">标准 4</option>
+                  <option value="-6,-5,-4,-3,-2,-1">平滑 6</option>
+                  <option value="-9,-8,-7,-6,-5,-4,-3,-2,-1">平滑 9</option>
                 </select>
               </td>
             </tr>
 
-            <tr data-tip="Set background color. Not visible if opacity is 1">
-              <td>Background</td>
+            <tr data-tip="设置背景色。若不透明度为1则不可见。">
+              <td>背景色</td>
               <td>
                 <input id="styleOceanBack" type="color" value="#000000"/>
                 <output id="styleOceanBackOutput">#000000</output>
               </td>
             </tr>
 
-            <tr data-tip="Set foreground color. Visible if opacity > 0">
-              <td>Foreground</td>
+            <tr data-tip="设置前景色。若不透明度大于1则可见。">
+              <td>前景色</td>
               <td>
                 <input id="styleOceanFore" type="color" value="#466eab"/>
                 <output id="styleOceanForeOutput">#466eab</output>
@@ -1201,76 +1200,76 @@
           </tbody>
 
           <tbody id="styleGrid">
-            <tr data-tip="Select grid overlay type">
-              <td>Type</td>
+            <tr data-tip="设置网格样式。">
+              <td>样式</td>
               <td>
                 <select id="styleGridType">
-                  <option value="pointyHex">Hex grid (pointy)</option>
-                  <option value="flatHex">Hex grid (flat)</option>
-                  <option value="square">Square grid</option>
+                  <option value="pointyHex">六边形网格（纵向）</option>
+                  <option value="flatHex">六边形网格（横向）</option>
+                  <option value="square">正方形网格</option>
                 </select>
               </td>
             </tr>
 
-            <tr data-tip="Set grid cells spacing (size)">
-              <td>Size</td>
+            <tr data-tip="设置网格尺寸。">
+              <td>尺寸</td>
               <td>
                 <input id="styleGridSize" type="number" min=2 max=50 step=.001>
-                <output id="styleGridSizeFriendly" data-tip="Distance between two adjacent cells in map scale"></output>
+                <output id="styleGridSizeFriendly" data-tip="在当前比例尺下两相邻网格间的距离。"></output>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleShift">
-            <tr data-tip="Shift the element by axes">
-              <td>Shift by axes</td>
+            <tr data-tip="基于轴线平移图层。">
+              <td>基于轴线偏移量</td>
               <td>
-                <input id="styleShiftX" type="number" data-tip="Shift by x axis in pixels">
-                <input id="styleShiftY" type="number" data-tip="Shift by y axis in pixels">
+                <input id="styleShiftX" type="number" data-tip="基于x轴平移图层。">
+                <input id="styleShiftY" type="number" data-tip="基于y轴平移图层。">
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleCompass">
-            <tr data-tip="Set wind (compass) rose size">
-              <td>Size</td>
+            <tr data-tip="设置风玫瑰的尺寸。">
+              <td>尺寸</td>
               <td>
                 <input id="styleCompassSizeInput" type="range" min=.02 max=1 step=.01 value=.25>
                 <output id="styleCompassSizeOutput">.25</output>
               </td>
             </tr>
 
-            <tr data-tip="Shift wind (compass) rose by axes">
-              <td>Shift by axes</td>
+            <tr data-tip="基于轴线平移图层。">
+              <td>基于轴线偏移量</td>
               <td>
-                <input id="styleCompassShiftX" type="number" value=80 data-tip="Shift by x axis in pixels">
-                <input id="styleCompassShiftY" type="number" value=80 data-tip="Shift by y axis in pixels">
+                <input id="styleCompassShiftX" type="number" value=80 data-tip="基于x轴平移图层。">
+                <input id="styleCompassShiftY" type="number" value=80 data-tip="基于y轴平移图层。">
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleRelief">
-              <tr data-tip="Select set of relief icons. The change will trigger icons regeneration">
-                  <td>Style</td>
+              <tr data-tip="设置装饰图案样式。修改此项将会导致装饰图案重新生成。">
+                  <td>样式</td>
                   <td>
                     <select id="styleReliefSet">
-                      <option value="simple" selected>Simple</option>
-                      <option value="gray">Gray</option>
-                      <option value="colored">Colored</option>
+                      <option value="simple" selected>简约</option>
+                      <option value="gray">灰度</option>
+                      <option value="colored">彩色</option>
                     </select>
                   </td>
                 </tr>
 
-            <tr data-tip="Define the size of relief icons">
-              <td>Size</td>
+            <tr data-tip="设置装饰图案尺寸。">
+              <td>尺寸</td>
               <td>
                 <input id="styleReliefSizeInput" data-stored="reliefSize" type="range" min=.2 max=3 step=.01 value=1>
                 <output id="styleReliefSizeOutput">1</output>
               </td>
             </tr>
 
-            <tr data-tip="Define the density of relief icons. Highly affects performance!">
-              <td>Density</td>
+            <tr data-tip="设置装饰图案的密度。过大的密度将会对性能产生影响！">
+              <td>密度</td>
               <td>
                 <input id="styleReliefDensityInput" data-stored="reliefDensity" type="range" min=.3 max=.8 step=.01 value=.4>
                 <output id="styleReliefDensityOutput">.4</output>
@@ -1279,8 +1278,8 @@
           </tbody>
 
           <tbody id="styleFill">
-            <tr data-tip="Set fill color">
-              <td>Fill</td>
+            <tr data-tip="设置填充颜色。">
+              <td>填充色</td>
               <td>
                 <input id="styleFillInput" type="color" value="#5E4FA2"/>
                 <output id="styleFillOutput">#5E4FA2</output>
@@ -1289,8 +1288,8 @@
           </tbody>
 
           <tbody id="styleStroke">
-            <tr data-tip="Set stroke color">
-              <td>Stroke</td>
+            <tr data-tip="设置描边颜色。">
+              <td>描边色</td>
               <td>
                 <input id="styleStrokeInput" type="color" value="#5E4FA2"/>
                 <output id="styleStrokeOutput">#5E4FA2</output>
@@ -1299,8 +1298,8 @@
           </tbody>
 
           <tbody id="styleStrokeWidth">
-            <tr data-tip="Set stroke width">
-              <td>Stroke width</td>
+            <tr data-tip="设置描边宽度。">
+              <td>描边宽度</td>
               <td>
                 <input id="styleStrokeWidthInput" type="range" min=0 max=5 step=.01 value=1>
                 <output id="styleStrokeWidthOutput">1</output>
@@ -1309,92 +1308,92 @@
           </tbody>
 
           <tbody id="styleStrokeDash">
-            <tr data-tip="Set stroke dash array (e.g. 5 2) and linecap">
-              <td>Stroke dash</td>
+            <tr data-tip="设置描边间隔（如5 2）与描边方式。">
+              <td>描边间隔</td>
               <td>
                 <input id="styleStrokeDasharrayInput" type="text" value="1 2" style="width:26%">
                 <select id="styleStrokeLinecapInput" style="width:32%">
-                  <option value="inherit" selected>Inherit</option>
-                  <option value="butt">Butt</option>
-                  <option value="round">Round</option>
-                  <option value="square">Square</option>
+                  <option value="inherit" selected>继承</option>
+                  <option value="butt">粗边</option>
+                  <option value="round">圆角</option>
+                  <option value="square">方形</option>
                 </select>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleFont">
-            <tr data-tip="Select font">
-              <td>Font</td>
+            <tr data-tip="设置字体。">
+              <td>字体</td>
               <td>
                 <select id="styleSelectFont"></select>
-                <input id="styleInputFont" data-tip="Provide a link to @font-face declaration or type Google font name" type="text" placeholder="link to @font-face">
-                <button id="styleFontAdd" data-tip="Add custom font from the web" class="icon-plus styleButton"></button>
+                <input id="styleInputFont" data-tip="请提供一个包含@font-face的网址，或键入 Google Fonts 中的字体名。" type="text" placeholder="包含@font-face的网址">
+                <button id="styleFontAdd" data-tip="从互联网添加自定义字体。" class="icon-plus styleButton"></button>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleSize">
-            <tr data-tip="Set font size">
-              <td>Font size</td>
+            <tr data-tip="设置字体大小。">
+              <td>字体大小</td>
               <td>
-                <button id="styleFontPlus" data-tip="Multiply font size by 1.1" class="whiteButton">+</button>
-                <button id="styleFontMinus" data-tip="Multiply font size by 0.9" class="whiteButton" >-</button>
+                <button id="styleFontPlus" data-tip="将字体大小更改为原来的1.1倍。" class="whiteButton">+</button>
+                <button id="styleFontMinus" data-tip="将字体大小更改为原来的0.9倍。" class="whiteButton" >-</button>
                 <input id="styleFontSize" type="number" min=.5 max=100 step=.1 value=14>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleRadius">
-            <tr data-tip="Set icon size">
-              <td>Radius</td>
+            <tr data-tip="设置图标尺寸。">
+              <td>图标半径</td>
               <td>
-                <button id="styleRadiusPlus" data-tip="Multiply radius by 1.1" class="whiteButton">+</button>
-                <button id="styleRadiusMinus" data-tip="Multiply radius by 1.1" class="whiteButton">-</button>
+                <button id="styleRadiusPlus" data-tip="将图标半径更改为原来的1.1倍。" class="whiteButton">+</button>
+                <button id="styleRadiusMinus" data-tip="将图标半径更改为原来的0.9倍。" class="whiteButton">-</button>
                 <input id="styleRadiusInput" type="number" min=.2 max=10 step=.02 value=1>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleIconSize">
-            <tr data-tip="Set icon size">
-              <td>Size</td>
+            <tr data-tip="设置图标尺寸。">
+              <td>图标尺寸</td>
               <td>
-                <button id="styleIconSizePlus" data-tip="Multiply size by 1.1" class="whiteButton">+</button>
-                <button id="styleIconSizeMinus" data-tip="Multiply size by 1.1" class="whiteButton">-</button>
+                <button id="styleIconSizePlus" data-tip="将图标尺寸更改为原来的1.1倍。" class="whiteButton">+</button>
+                <button id="styleIconSizeMinus" data-tip="将图标尺寸更改为原来的0.9倍。" class="whiteButton">-</button>
                 <input id="styleIconSizeInput" type="number" min=.2 max=10 step=.02 value=1>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleCoastline">
-            <tr data-tip="Allow system to apply filter automatically based on zoom level">
+            <tr data-tip="允许自适应缩放级别应用滤镜。">
               <td colspan=2>
                 <input id="styleCoastlineAuto" class="checkbox" type="checkbox">
-                <label for="styleCoastlineAuto" class="checkbox-label">Automatically change filter on zoom</label>
+                <label for="styleCoastlineAuto" class="checkbox-label">自适应滤镜</label>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleTemperature">
-            <tr data-tip="Define transparency of temperature leyer. Set to 0 to make it fully transparent">
-              <td>Fill opacity</td>
+            <tr data-tip="设置等温线的不透明度。">
+              <td>不透明度</td>
               <td>
                 <input id="styleTemperatureFillOpacityInput" type="range" min=0 max=1 step=.01 value=.3/>
                 <output id="styleTemperatureFillOpacityOutput">0.3</output>
               </td>
             </tr>
 
-            <tr data-tip="Set labels size">
-              <td>Labels size</td>
+            <tr data-tip="设置等温线上标签的尺寸。">
+              <td>标签尺寸</td>
               <td>
                 <input id="styleTemperatureFontSizeInput" type="range" min=0 max=30 value=8/>
                 <output id="styleTemperatureFontSizeOutput">8</output>
               </td>
             </tr>
 
-            <tr data-tip="Set labels color">
-              <td>Labels color</td>
+            <tr data-tip="设置等温线上标签的颜色。">
+              <td>标签颜色</td>
               <td>
                 <input id="styleTemperatureFillInput" type="color"/>
                 <output id="styleTemperatureFillOutput">#000</output>
@@ -1403,62 +1402,62 @@
           </tbody>
 
           <tbody id="styleHeightmap">
-            <tr data-tip="Select color scheme for the element">
-              <td>Color scheme</td>
+            <tr data-tip="设置高度图的配色方案。">
+              <td>配色方案</td>
               <td>
                 <select id="styleHeightmapScheme" onchange="drawHeightmap()">
-                  <option value="bright" selected>Bright</option>
-                  <option value="light">Light</option>
-                  <option value="green">Green</option>
-                  <option value="monochrome">Monochrome</option>
+                  <option value="bright" selected>亮色</option>
+                  <option value="light">淡色</option>
+                  <option value="green">绿色</option>
+                  <option value="monochrome">灰度</option>
                 </select>
               </td>
             </tr>
 
-            <tr data-tip="Terracing rate. Set to 0 (toggle off) to improve performance">
-              <td>Terracing</td>
+            <tr data-tip="设置阶梯分割率。将此项设置为0（即关闭阶梯分割）将有助于提升性能。">
+              <td>阶梯分割率</td>
               <td>
                 <input id="styleHeightmapTerracing" type="range" min=0 max=20 step=1>
                 <output id="styleHeightmapTerracingOutput">0</output>
               </td>
             </tr>
-            <tr data-tip="Layers reduction rate. Increase to improve performance">
-              <td>Reduce layers</td>
+            <tr data-tip="设置层级率。将此项设置为较低的值将有助于提升性能。">
+              <td>层级率</td>
               <td>
                 <input id="styleHeightmapSkip" type="range" min=0 max=10 step=1 value=5 oninput="styleHeightmapSkipOutput.value = this.value; drawHeightmap()">
                 <output id="styleHeightmapSkipOutput">5</output>
               </td>
             </tr>
 
-            <tr data-tip="Line simplification rate. Increase to slightly improve performance">
-              <td>Simplify line</td>
+            <tr data-tip="设置线条简化率。将此项设置为较低的值将有助于提升性能。">
+              <td>线条简化率</td>
               <td>
                 <input id="styleHeightmapSimplification" type="range" min=0 max=10 step=1 value=0 oninput="styleHeightmapSimplificationOutput.value = this.value; drawHeightmap()">
                 <output id="styleHeightmapSimplificationOutput">0</output>
               </td>
             </tr>
 
-            <tr data-tip="Select line interpolation type">
-              <td>Line style</td>
+            <tr data-tip="设置线条插值类型。">
+              <td>线条样式</td>
               <td>
                 <select id="styleHeightmapCurve" onchange="drawHeightmap()">
-                  <option value=0 selected>Curved</option>
-                  <option value=1>Linear</option>
-                  <option value=2>Rectangular</option>
+                  <option value=0 selected>曲线</option>
+                  <option value=1>线性</option>
+                  <option value=2>矩形</option>
                 </select>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleArmies">
-            <tr data-tip="Set fill transparency. Set to 0 to make it fully transparent">
-              <td>Fill opacity</td>
+            <tr data-tip="设置不透明度。">
+              <td>不透明度</td>
               <td>
                 <input id="styleArmiesFillOpacity" type="range" min=0 max=1 step=.01 value=1>
                 <output id="styleArmiesFillOpacityOutput">1</output>
               </td>
             </tr>
-            <tr data-tip="Set regiment box size. All regiments will be redrawn on change (position will defaulted)">
+            <tr data-tip="设置军队指示框的尺寸。修改此项后所有指示框将被重新绘制（位置保持不变）。">
               <td>Box Size</td>
               <td>
                 <input id="styleArmiesSize" type="range" min=1 max=10 step=.1 value=3>
@@ -1468,83 +1467,83 @@
           </tbody>
 
           <tbody id="styleFilter" style="display: block">
-            <tr data-tip="Select filter for element. Please note filters may cause performance issues!">
-              <td>Filter</td>
+            <tr data-tip="设置滤镜。请注意，滤镜可能引起性能问题！">
+              <td>滤镜</td>
               <td>
                 <select id="styleFilterInput">
-                  <option value="" selected>None</option>
-                  <option value="url(#blurFilter)">Blur 0.2</option>
-                  <option value="url(#blur1)">Blur 1</option>
-                  <option value="url(#blur3)">Blur 3</option>
-                  <option value="url(#blur5)">Blur 5</option>
-                  <option value="url(#blur7)">Blur 7</option>
-                  <option value="url(#blur10)">Blur 10</option>
-                  <option value="url(#splotch)">Splotch</option>
-                  <option value="url(#bluredSplotch)">Blurred Splotch</option>
-                  <option value="url(#dropShadow01)">Shadow 0.1</option>
-                  <option value="url(#dropShadow05)">Shadow 0.5</option>
-                  <option value="url(#dropShadow)">Shadow 2</option>
-                  <option value="url(#outline)">Outline</option>
-                  <option value="url(#pencil)">Pencil</option>
-                  <option value="url(#turbulence)">Turbulence</option>
-                  <option value="url(#paper)">Paper</option>
-                  <option value="url(#crumpled)">Crumpled</option>
-                  <option value="url(#filter-grayscale)">Grayscale</option>
-                  <option value="url(#filter-sepia)">Sepia</option>
+                  <option value="" selected>无</option>
+                  <option value="url(#blurFilter)">模糊 0.2</option>
+                  <option value="url(#blur1)">模糊 1</option>
+                  <option value="url(#blur3)">模糊 3</option>
+                  <option value="url(#blur5)">模糊 5</option>
+                  <option value="url(#blur7)">模糊 7</option>
+                  <option value="url(#blur10)">模糊 10</option>
+                  <option value="url(#splotch)">淡化</option>
+                  <option value="url(#bluredSplotch)">模糊淡化</option>
+                  <option value="url(#dropShadow01)">阴影 0.1</option>
+                  <option value="url(#dropShadow05)">阴影 0.5</option>
+                  <option value="url(#dropShadow)">阴影 2</option>
+                  <option value="url(#outline)">描边</option>
+                  <option value="url(#pencil)">素描</option>
+                  <option value="url(#turbulence)">湍流</option>
+                  <option value="url(#paper)">纸张</option>
+                  <option value="url(#crumpled)">起皱</option>
+                  <option value="url(#filter-grayscale)">灰度</option>
+                  <option value="url(#filter-sepia)">深褐</option>
                 </select>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleClipping">
-            <tr data-tip="Set clipping. Only non-clipped part will be visible">
-              <td>Clipping</td>
+            <tr data-tip="设置隐藏部分。">
+              <td>隐藏部分</td>
               <td>
                 <select id="styleClippingInput">
-                  <option value="" selected>No clipping</option>
-                  <option value="url(#land)">Clip water</option>
-                  <option value="url(#water)">Clip land</option>
+                  <option value="" selected>不隐藏</option>
+                  <option value="url(#land)">隐藏水域</option>
+                  <option value="url(#water)">隐藏陆地</option>
                 </select>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleMarkers">
-            <tr data-tip="Try to keep the same size on any map scale, turn off to get size change depending on scale">
+            <tr data-tip="启用此项标记将会在缩放时固定大小。禁用此项将允许标记自适应大小。">
               <td colspan=2>
                 <input id="styleRescaleMarkers" class="checkbox" type="checkbox">
-                <label for="styleRescaleMarkers" class="checkbox-label">Keep initial size on zoom change</label>
+                <label for="styleRescaleMarkers" class="checkbox-label">缩放时大小不变</label>
               </td>
             </tr>
           </tbody>
 
           <tbody id="styleVisibility">
-            <tr data-tip="Define displayed label groups">
+            <tr data-tip="设置显示的标签组。">
               <td colspan=2>
                 <input id="hideLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()" checked>
-                <label for="hideLabels" data-tip="Allow system to hide labels if their size in too small or too big on that scale" class="checkbox-label">Toggle visibility automatically</label>
+                <label for="hideLabels" data-tip="允许自适应缩放级别隐藏/显示标签。" class="checkbox-label">自适应隐藏/显示</label>
               </td>
             </tr>
           </tbody>
         </table>
 
-        <div id="mapFilters" data-tip="Set a filter to be applied to the map in general">
-          <p>Toggle global filters:</p>
-          <button id="grayscale" class="radio">Grayscale</button>
-          <button id="sepia" class="radio">Sepia</button>
-          <button id="dingy" class="radio">Dingy</button>
-          <button id="tint" class="radio">Tint</button>
+        <div id="mapFilters" data-tip="请选择一个全局滤镜。">
+          <p>切换全局滤镜：</p>
+          <button id="grayscale" class="radio">灰度</button>
+          <button id="sepia" class="radio">深褐</button>
+          <button id="dingy" class="radio">昏暗</button>
+          <button id="tint" class="radio">淡色</button>
         </div>
 
       </div>
 
       <div id="optionsContent" class="tabcontent">
-        <p data-tip="Map generation settings. Generate a new map to apply the settings">Map settings (new map to apply):</p>
+        <p data-tip="地图生成设置。新建地图以应用设置项。">地图设置（新建地图以应用）：</p>
         <table>
 
-          <tr data-tip="Canvas width and height in pixels. Defines map size on generation, then map size cannot be changed and canvas size changes only visible area. Keep canvas size equal to screen size or less to improve performance. The best aspect ratio for maps is 2:1">
+          <tr data-tip="画布的宽与高。画布尺寸在地图生成后无法更改实际数值，修改将仅改变可见区域。保持画布大小小于等于屏幕大小以提高性能。地图最佳纵横比为2:1。">
             <td></td>
-            <td>Canvas size</td>
+            <td>画布尺寸</td>
             <td>
               <input id="mapWidthInput" class="paired" type="number" min=240 value=960>
               <span>x</span>
@@ -1552,27 +1551,27 @@
               <span>px</span>
             </td>
             <td>
-              <i data-tip="Toggle between screen size and initial canvas size" id="toggleFullscreen" class="icon-resize-full-alt"></i>
+              <i data-tip="将画布尺寸切换为屏幕大小。" id="toggleFullscreen" class="icon-resize-full-alt"></i>
             </td>
           </tr>
 
-          <tr data-tip="Map seed number. Seed produces the same map only if canvas size and options are the same">
+          <tr data-tip="地图种子。只有当画布大小与其余设置完全一致时相同的种子才会生成相同的地图。">
             <td>
-              <i data-tip="Click to generate a map for this seed" id="optionsSeedGenerate"></i>
+              <i data-tip="单击以使用此种子生成地图。" id="optionsSeedGenerate"></i>
             </td>
-            <td>Map seed</td>
+            <td>地图种子</td>
             <td>
               <input id="optionsSeed" class="long" type="number" min=1 max=999999999 step=1>
             </td>
             <td>
-              <i data-tip="Show seed history to apply a previous seed" id="optionsMapHistory" class="icon-history"></i>
-              <i data-tip="Copy map seed as URL. It will produce the same map only if options are default or the same" id="optionsCopySeed" class="icon-docs"></i>
+              <i data-tip="查看种子历史记录。" id="optionsMapHistory" class="icon-history"></i>
+              <i data-tip="复制种子分享链接。只有当设置完全一致时相同的种子才会生成相同的地图。" id="optionsCopySeed" class="icon-docs"></i>
             </td>
           </tr>
 
-          <tr data-tip="Set number of points to be used for graph generation. Highly affects performance">
+          <tr data-tip="设置用于生成地图的点密度。该项的值对性能有较大影响！">
             <td></td>
-            <td>Points number</td>
+            <td>点密度</td>
             <td>
               <input id="densityInput" type="range" min=1 max=10 value=1>
             </td>
@@ -1581,61 +1580,61 @@
             </td>
           </tr>
 
-          <tr data-tip="Define map name (will be used to name downloaded files)">
+          <tr data-tip="设置地图名称（将用于为保存的地图命名）。">
             <td>
               <i data-locked=0 id="lock_mapName" class="icon-lock-open"></i>
             </td>
-            <td>Map name</td>
+            <td>地图名称</td>
             <td>
               <input id="mapName" data-stored="mapName" class="long" autocorrect="off" spellcheck="false" type="text">
             </td>
             <td>
-              <i data-tip="Regenerate map name" onclick="Names.getMapName(true)" class="icon-arrows-cw"></i>
+              <i data-tip="重新生成地图名称。" onclick="Names.getMapName(true)" class="icon-arrows-cw"></i>
             </td>
           </tr>
 
-          <tr data-tip="Define current year and era name">
+          <tr data-tip="设置地图年份与纪年名称。">
             <td>
               <i data-locked=0 id="lock_era" class="icon-lock-open"></i>
             </td>
-            <td>Year and era</td>
+            <td>年份与纪年</td>
             <td>
               <input id="yearInput" data-stored="year" type="number" step=1 class="paired" style="width: 24%; float: left; font-size: smaller">
               <input id="eraInput" data-stored="era" autocorrect="off" spellcheck="false" type="text" style="width: 75%; float: right" class="long">
             </td>
             <td>
-              <i id="optionsEraRegenerate" data-tip="Regenerate era" class="icon-arrows-cw"></i>
+              <i id="optionsEraRegenerate" data-tip="重新生成纪年名称。" class="icon-arrows-cw"></i>
             </td>
           </tr>
 
-          <tr data-tip="Select template to be used for a Heightmap generation">
+          <tr data-tip="设置地图的高度图模板。">
             <td>
               <i data-locked=0 id="lock_template" class="icon-lock-open"></i>
             </td>
-            <td>Map template</td>
+            <td>地图模板</td>
             <td>
               <select id="templateInput" data-stored="template">
-                <option value="Volcano">Volcano</option>
-                <option value="High Island">High Island</option>
-                <option value="Low Island">Low Island</option>
-                <option value="Continents">Two Continents</option>
-                <option value="Archipelago">Archipelago</option>
-                <option value="Atoll">Atoll</option>
-                <option value="Mediterranean">Mediterranean</option>
-                <option value="Peninsula">Peninsula</option>
-                <option value="Pangea">Pangea</option>
-                <option value="Isthmus">Isthmus</option>
-                <option value="Shattered">Shattered</option>
+                <option value="Volcano">火山</option>
+                <option value="High Island">高岛</option>
+                <option value="Low Island">低岛</option>
+                <option value="Continents">两块大陆</option>
+                <option value="Archipelago">群岛</option>
+                <option value="Atoll">环礁</option>
+                <option value="Mediterranean">地中海</option>
+                <option value="Peninsula">半岛</option>
+                <option value="Pangea">泛大陆</option>
+                <option value="Isthmus">地峡</option>
+                <option value="Shattered">碎片化</option>
               </select>
             </td>
             <td></td>
           </tr>
 
-          <tr data-tip="Define how many Cultures should be generated">
+          <tr data-tip="设置地图中包含的文化数。">
             <td>
               <i data-locked=0 id="lock_cultures" class="icon-lock-open"></i>
             </td>
-            <td>Cultures number</td>
+            <td>文化数</td>
             <td>
               <input id="culturesInput" data-stored="cultures" type="range" min=1 max=32 value=14>
             </td>
@@ -1644,31 +1643,31 @@
             </td>
           </tr>
 
-          <tr data-tip="Select a set of cultures to be used for names and cultures generation">
+          <tr data-tip="设置用以生成文化的文化集。">
             <td>
               <i data-locked=0 id="lock_culturesSet" class="icon-lock-open"></i>
             </td>
-            <td>Cultures set</td>
+            <td>文化集</td>
             <td>
               <select id="culturesSet" data-stored="culturesSet">
-                <option value="world" data-max="32" selected>All-world</option>
-                <option value="european" data-max="15">European</option>
-                <option value="oriental" data-max="13">Oriental</option>
-                <option value="english" data-max="10">English</option>
-                <option value="antique" data-max="10">Antique</option>
-                <option value="highFantasy" data-max="23">High Fantasy</option>
-                <option value="darkFantasy" data-max="18">Dark Fantasy</option>
-                <option value="random" data-max="100">Random</option>
+                <option value="world" data-max="32" selected>全球</option>
+                <option value="european" data-max="15">欧洲</option>
+                <option value="oriental" data-max="13">东方</option>
+                <option value="english" data-max="10">英伦</option>
+                <option value="antique" data-max="10">古老</option>
+                <option value="highFantasy" data-max="23">古典奇幻</option>
+                <option value="darkFantasy" data-max="18">黑暗奇幻</option>
+                <option value="random" data-max="100">随机</option>
               </select>
             </td>
             <td></td>
           </tr>
 
-          <tr data-tip="Define how many states and capitals should be generated">
+          <tr data-tip="设置国家与首都的数量。">
             <td>
               <i data-locked=0 id="lock_regions" class="icon-lock-open"></i>
             </td>
-            <td>States number</td>
+            <td>国家数</td>
             <td>
               <input id="regionsInput" data-stored="regions" type="range" min=0 max=99 value=13>
             </td>
@@ -1677,11 +1676,11 @@
             </td>
           </tr>
 
-          <tr data-tip="Define burgs percentage to form a separate province">
+          <tr data-tip="设置划分省份的城市比例。">
             <td>
               <i data-locked=0 id="lock_provinces" class="icon-lock-open"></i>
             </td>
-            <td>Provinces ratio</td>
+            <td>省份划分比例</td>
             <td>
               <input id="provincesInput" data-stored="provinces" type="range" min=0 max=100 value=30>
             </td>
@@ -1690,11 +1689,11 @@
             </td>
           </tr>
 
-          <tr data-tip="Define how much states and cultures can vary in size. Defines expansionism value">
+          <tr data-tip="设置国家与文化间的差异度（扩张主义值）。">
             <td>
               <i data-locked=0 id="lock_power" class="icon-lock-open"></i>
             </td>
-            <td>Size variety</td>
+            <td>差异度</td>
             <td>
               <input id="powerInput" data-stored="power" type="range" min=0 max=10 step=.2 value=5>
             </td>
@@ -1703,11 +1702,11 @@
             </td>
           </tr>
 
-          <tr data-tip="Set state and cultures growth rate. Defines how many lands will stay neutral">
+          <tr data-tip="设置国家与文化的增长率，这将决定有多少领土保持中立。">
             <td>
               <i data-locked=0 id="lock_neutral" class="icon-lock-open"></i>
             </td>
-            <td>Growth rate</td>
+            <td>增长率</td>
             <td>
               <input id="neutralInput" data-stored="neutral" type="range" min=.1 max=2 step=.1 value=1>
             </td>
@@ -1716,11 +1715,11 @@
             </td>
           </tr>
 
-          <tr data-tip="Define a number of towns to be placed (if enough suitable land exists)">
+          <tr data-tip="设置城镇数量。（如果有足够多的土地的话）">
             <td>
               <i data-locked=0 id="lock_manors" class="icon-lock-open"></i>
             </td>
-            <td>Towns number</td>
+            <td>城镇数</td>
             <td>
               <input id="manorsInput" data-stored="manors" type="range" min=0 max=1000 step=1 value=1000>
             </td>
@@ -1729,11 +1728,11 @@
             </td>
           </tr>
 
-          <tr data-tip="Define how many organized religions and cults should be generated. Cultures will have their own folk religions in any case">
+          <tr data-tip="设置宗教与信仰群体的数量。无论该项为何值，特定文化都会产生民间宗教。">
             <td>
               <i data-locked=0 id="lock_religions" class="icon-lock-open"></i>
             </td>
-            <td>Religions number</td>
+            <td>宗教数</td>
             <td>
               <input id="religionsInput" data-stored="religions" type="range" min=0 max=50 step=1 value=15>
             </td>
@@ -1743,23 +1742,23 @@
           </tr>
         </table>
 
-        <p data-tip="Tool settings that don't affect maps. Changes are getting applied immediately">Generator settings:</p>
+        <p data-tip="不会影响地图的生成器设置。修改将立即应用。">生成器设置：</p>
         <table>
-          <tr data-tip="Set what Generator should do on opening">
+          <tr data-tip="设置生成器启动时的操作。">
             <td></td>
-            <td>Onload behavior</td>
+            <td>启动后</td>
             <td>
               <select id="onloadMap" data-stored="onloadMap">
-                <option value="random" selected>Generate random map</option>
-                <option value="saved">Open last saved map</option>
+                <option value="random" selected>生成新地图</option>
+                <option value="saved">载入最后打开的地图</option>
               </select>
             </td>
             <td></td>
           </tr>
 
-          <tr data-tip="Set user interface size. Please note browser zoom also affects interface size (Ctrl + or Ctrl - to change)">
+          <tr data-tip="设置UI尺寸。请注意，浏览器缩放也会影响UI尺寸。（Ctrl + 或 Ctrl -）">
             <td></td>
-            <td>Interface size</td>
+            <td>UI 尺寸</td>
             <td>
               <input id="uiSizeInput" data-stored="uiSize" type="range" min=.6 max=3 step=.1 value=1>
             </td>
@@ -1768,9 +1767,9 @@
             </td>
           </tr>
 
-          <tr data-tip="Set tooltip size">
+          <tr data-tip="设置提示文字大小。">
             <td></td>
-            <td>Tooltip size</td>
+            <td>提示文字大小</td>
             <td>
               <input id="tooltipSizeInput" data-stored="tooltipSize" type="range" min=4 max=32 value=14>
             </td>
@@ -1779,9 +1778,9 @@
             </td>
           </tr>
 
-          <tr data-tip="Set dialog and tool windows transparency">
+          <tr data-tip="设置对话框与其他窗口的透明度。">
             <td></td>
-            <td>Transparency</td>
+            <td>透明度</td>
             <td>
               <input id="transparencyInput" data-stored="transparency" type="range" min=0 max=100 value=15>
             </td>
@@ -1790,18 +1789,18 @@
             </td>
           </tr>
 
-          <tr data-tip="Set minimum and maximum possible zoom level">
+          <tr data-tip="设置最小与最大的缩放级别。">
             <td></td>
-            <td>Zoom extent</td>
+            <td>缩放级别</td>
             <td>
-              <span data-tip="Mimimal possible zoom level (should be > 0)">min</span>
-              <input data-tip="Mimimal possible zoom level (should be > 0)" id="zoomExtentMin" class="paired" type="number" min=.2 step=.1 max=20 value=1>
-              <span data-tip="Maximal possible zoom level (should be > 1)">max</span>
-              <input data-tip="Maximal possible zoom level (should be > 1)" id="zoomExtentMax" class="paired" type="number" min=1 max=50 value=20>
+              <span data-tip="最小缩放级别（应大于0）">最小</span>
+              <input data-tip="最小缩放级别（应大于0）" id="zoomExtentMin" class="paired" type="number" min=.2 step=.1 max=20 value=1>
+              <span data-tip="最大缩放级别（应大于1）">最大</span>
+              <input data-tip="最大缩放级别（应大于1）" id="zoomExtentMax" class="paired" type="number" min=1 max=50 value=20>
             </td>
             <td>
-              <i data-tip="Restore default zoom extent (1, 20)" id="zoomExtentDefault" class="icon-ccw"></i>
-              <i data-tip="Allow to drag map beyond canvas borders" id="translateExtent" data-on=0 class="icon-hand-paper-o"></i>
+              <i data-tip="重置至默认缩放级别。（1,20）" id="zoomExtentDefault" class="icon-ccw"></i>
+              <i data-tip="允许将地图拖拽至画布之外。" id="translateExtent" data-on=0 class="icon-hand-paper-o"></i>
             </td>
           </tr>
 
@@ -1818,107 +1817,107 @@
           </tr> -->
         </table>
 
-        <button id="configureWorld" data-tip="Click to open world configurator to setup map position on Globe and World climate" onclick="editWorld()">Configure World</button>
-        <button id="optionsReset" data-tip="Click to restore default options (page will be reloaded)" onclick="restoreDefaultOptions()">Reset to defaults</button>
+        <button id="configureWorld" data-tip="单击以开启世界配置，设置地图在全球上的位置。" onclick="editWorld()">世界配置</button>
+        <button id="optionsReset" data-tip="单击以恢复默认设置。（将重新加载本页面）" onclick="restoreDefaultOptions()">恢复默认</button>
 
       </div>
 
       <div id="toolsContent" class="tabcontent">
         <div>
-          <p>Click to configure:</p>
-          <button id="editHeightmapButton" data-tip="Click to open Heightmap customization menu. Shortcut: Shift + H">Heightmap</button>
-          <button id="editBiomesButton" data-tip="Click to open Biomes Editor. Shortcut: Shift + B">Biomes</button>
-          <button id="editStatesButton" data-tip="Click to open States Editor. Shortcut: Shift + S">States</button>
-          <button id="editProvincesButton" data-tip="Click to open Provinces Editor. Shortcut: Shift + P">Provinces</button>
-          <button id="editDiplomacyButton" data-tip="Click to open Diplomatical relationships Editor. Shortcut: Shift + D">Diplomacy</button>
-          <button id="editCulturesButton" data-tip="Click to open Cultures Editor. Shortcut: Shift + C">Cultures</button>
-          <button id="editNamesBaseButton" data-tip="Click to open Namesbase Editor. Shortcut: Shift + N">Namesbase</button>
-          <button id="editZonesButton" data-tip="Click to open Zones Editor. Shortcut: Shift + Z">Zones</button>
-          <button id="editReligions" data-tip="Click to open Religions Editor. Shortcut: Shift + R">Religions</button>
-          <button id="editUnitsButton" data-tip="Click to open Units Editor. Shortcut: Shift + Q">Units</button>
-          <button id="editNotesButton" data-tip="Click to open Notes Editor. Shortcut: Shift + O">Notes</button>
+          <p>单击以配置：</p>
+          <button id="editHeightmapButton" data-tip="单击以打开高度图自定义菜单。 (Shift + H)">高度图</button>
+          <button id="editBiomesButton" data-tip="单击以打开生物群系编辑器。 (Shift + B)">生物群系</button>
+          <button id="editStatesButton" data-tip="单击以打开国家编辑器。 (Shift + S)">国家</button>
+          <button id="editProvincesButton" data-tip="单击以打开省份编辑器。 (Shift + P)">省份</button>
+          <button id="editDiplomacyButton" data-tip="单击以打开外交关系编辑器。 (Shift + D)">外交</button>
+          <button id="editCulturesButton" data-tip="单击以打开文化编辑器。 (Shift + C)">文化</button>
+          <button id="editNamesBaseButton" data-tip="单击以打开名称生成编辑器。 (Shift + N)">名称生成</button>
+          <button id="editZonesButton" data-tip="单击以打开区域编辑器。 (Shift + Z)">区域</button>
+          <button id="editReligions" data-tip="单击以打开宗教编辑器。 (Shift + R)">宗教</button>
+          <button id="editUnitsButton" data-tip="单击以打开单位编辑器。  (Shift + Q)">单位</button>
+          <button id="editNotesButton" data-tip="单击以打开便签编辑器。  (Shift + O)">便签</button>
         </div>
 
         <div>
-          <p>Click to overview:</p>
-          <button id="overviewBurgsButton" data-tip="Click to open Burgs Overview. Shortcut: Shift + T">Burgs</button>
-          <button id="overviewRiversButton" data-tip="Click to open Rivers Overview. Shortcut: Shift + V">Rivers</button>
-          <button id="overviewMilitaryButton" data-tip="Click to open Military Forces Overview. Shortcut: Shift + M">Military</button>
-          <button id="overviewCellsButton" data-tip="Click to open Cell details view. Shortcut: Shift + E">Cells</button>
-          <!-- <button id="overviewLandmassedButton" data-tip="Click to open Landmasses Overview. Shortcut: Shift + L">Landmasses</button> -->
-          <!-- <button id="overviewWaterbodiesButton" data-tip="Click to open Waterbodies Overview. Shortcut: Shift + W">Waterbodies</button> -->
-          <!-- <button id="overviewRoutesButton" data-tip="Click to open Routes Overview. Shortcut: Shift + U">Routes</button> -->
+          <p>单击以查看：</p>
+          <button id="overviewBurgsButton" data-tip="单击以打开城市总览。 (Shift + T)">城市</button>
+          <button id="overviewRiversButton" data-tip="单击以打开河流总览。 (Shift + V)">河流</button>
+          <button id="overviewMilitaryButton" data-tip="单击以打开军事总览。 (Shift + M)">军事</button>
+          <button id="overviewCellsButton" data-tip="单击以打开单元格总览。 (Shift + E)">单元格</button>
+          <!-- <button id="overviewLandmassedButton" data-tip="Click to open Landmasses Overview. （Shift + L">Landmasses</button> -->
+          <!-- <button id="overviewWaterbodiesButton" data-tip="Click to open Waterbodies Overview. （Shift + W">Waterbodies</button> -->
+          <!-- <button id="overviewRoutesButton" data-tip="Click to open Routes Overview. （Shift + U">Routes</button> -->
         </div>
 
         <div id="regenerateFeature">
-          <p>Click to regenerate:</p>
-          <button id="regenerateStateLabels" data-tip="Click to update state labels placement based on current borders">State labels</button>
-          <button id="regenerateReliefIcons" data-tip="Click to regenerate all relief icons based on current cell biome and elevation">Relief icons</button>
-          <button id="regenerateRoutes" data-tip="Click to regenerate all routes">Routes</button>
-          <button id="regenerateRivers" data-tip="Click to regenerate all rivers (restore default state)">Rivers</button>
-          <button id="regeneratePopulation" data-tip="Click to recalculate rural and urban population">Population</button>
-          <button id="regenerateBurgs" data-tip="Click to regenerate all burgs and routes. States will remain as they are">Burgs</button>
-          <button id="regenerateStates" data-tip="Click to select new capitals and regenerate states. Military forces will be regenerated as well, burgs will remain as they are">States</button>
-          <button id="regenerateProvinces" data-tip="Click to regenerate provinces. States will remain as they are">Provinces</button>
-          <button id="regenerateReligions" data-tip="Click to regenerate religions">Religions</button>
-          <button id="regenerateCultures" data-tip="Click to regenerate cultures">Cultures</button>
-          <button id="regenerateMilitary" data-tip="Click to recalculate military forces based on current military options">Military</button>
-          <button id="regenerateIce" data-tip="Click to icebergs and glaciers">Ice</button>
-          <button id="regenerateMarkers" data-tip="Click to regenerate markers. Hold Ctrl and click to set markers number multiplier">Markers</button>
-          <button id="regenerateZones" data-tip="Click to regenerate zones. Hold Ctrl and click to set zones number multiplier">Zones</button>
+          <p>单击以重新生成：</p>
+          <button id="regenerateStateLabels" data-tip="单击以基于当前国境线重新生成标签。">标签</button>
+          <button id="regenerateReliefIcons" data-tip="单击以基于当前单元格生物群系及海拔重新生成所有装饰图案。">装饰图案</button>
+          <button id="regenerateRoutes" data-tip="单击以重新生成贸易路线。">贸易路线</button>
+          <button id="regenerateRivers" data-tip="单击以重新生成河流（恢复初始状态）。">河流</button>
+          <button id="regeneratePopulation" data-tip="单击以重新计算城乡人口。">人口</button>
+          <button id="regenerateBurgs" data-tip="单击以重新生成所有城市与贸易路线。国家将保持原样。">城市</button>
+          <button id="regenerateStates" data-tip="单击以重新选择首都与生成国家。军队会随之重新生成，但城市将保持原样。">国家</button>
+          <button id="regenerateProvinces" data-tip="单击以重新生成省份。国家将保持原样。">省份</button>
+          <button id="regenerateReligions" data-tip="单击以重新生成宗教。">宗教</button>
+          <button id="regenerateCultures" data-tip="单击以重新生成文化。">文化</button>
+          <button id="regenerateMilitary" data-tip="单击以基于当前军事设置重新生成军队。">军队</button>
+          <button id="regenerateIce" data-tip="单击以重新生成冰川。">冰川</button>
+          <button id="regenerateMarkers" data-tip="单击以重新生成标记。Ctrl + 单击以设置标记因数。">标记</button>
+          <button id="regenerateZones" data-tip="单击以重新生成区域。Ctrl + 单击以设置区域因数。">区域</button>
         </div>
 
         <div id="addFeature">
-          <p>Click to add:</p>
-          <button id="addBurgTool" data-tip="Click on map to place a burg. Hold Shift to add multiple. Shortcut: Shift + 1">Burg</button>
-          <button id="addLabel" data-tip="Click on map to place label. Hold Shift to add multiple. Shortcut: Shift + 2">Label</button>
-          <button id="addRiver" data-tip="Click on map to place a river. Hold Shift to add multiple. Shortcut: Shift + 3">River</button>
-          <button id="addRoute" data-tip="Click on map to place a route. Shortcut: Shift + 4">Route</button>
-          <button id="addMarker" data-tip="Click on map to place a marker. Hold Shift to add multiple. Shortcut: Shift + 5">Marker</button>
+          <p>单击以添加：</p>
+          <button id="addBurgTool" data-tip="单击地图以添加新城市。按住 Shift 可添加多个。 (Shift + 1)">城市</button>
+          <button id="addLabel" data-tip="单击地图以添加新标签。按住 Shift 可添加多个。 (Shift + 2)">标签</button>
+          <button id="addRiver" data-tip="单击地图以添加新河流。按住 Shift 可添加多个。 (Shift + 3)">河流</button>
+          <button id="addRoute" data-tip="单击地图以添加新贸易路线。 (Shift + 4)">贸易路线</button>
+          <button id="addMarker" data-tip="单击地图以添加新标记。按住 Shift 可添加多个。 (Shift + 5)">标记</button>
         </div>
       </div>
 
       <div id="customizationMenu" class="tabcontent">
-        <p>Heightmap customization tools:</p>
+        <p>高度图自定义菜单：</p>
         <div id="customizeTools">
-          <button data-tip="Display brushes panel" id="paintBrushes">Paint Brushes</button>
-          <button data-tip="Open template editor" id="applyTemplate" style="display: none">Template Editor</button>
-          <button data-tip="Open Image Converter" id="convertImage" style="display: none">Image Converter</button>
-          <button data-tip="Render heightmap data as a small monochrome image" id="heightmapPreview">Preview</button>
-          <button data-tip="Preview heightmap in 3D scene" id="heightmap3DView">3D scene</button>
+          <button data-tip="显示画笔面板。" id="paintBrushes">画笔</button>
+          <button data-tip="打开模板编辑器。" id="applyTemplate" style="display: none">模板编辑器</button>
+          <button data-tip="打开图像转换器。" id="convertImage" style="display: none">图像转换器</button>
+          <button data-tip="将高度图数据渲染为小型单色图像。" id="heightmapPreview">预览</button>
+          <button data-tip="在三维视图下预览高度图。" id="heightmap3DView">三维视图</button>
         </div>
 
         <div id="customizeOptions">
-          <p>Options:</p>
-          <div data-tip="Heightmap edit mode">Edit mode: <span id="heightmapEditMode"></span></div>
-          <div data-tip="Render cells below the sea level (with height less than 20)">
+          <p>设置：</p>
+          <div data-tip="Heightmap edit mode">编辑模式：<span id="heightmapEditMode"></span></div>
+          <div data-tip="渲染高度低于海平面（高度小于20）的单元格。">
             <input id="renderOcean" class="checkbox" type="checkbox">
-            <label for="renderOcean" class="checkbox-label">Render ocean cells</label>
+            <label for="renderOcean" class="checkbox-label">渲染海洋单元格</label>
           </div>
-          <div id="changeHeightsBox" data-tip="Regenerate rivers and allow water flow to slightly change heights">
+          <div id="changeHeightsBox" data-tip="重新生成河流并允许河流轻微改变沿岸陆地高度。">
             <input id="changeHeights" class="checkbox" type="checkbox" checked>
-            <label for="changeHeights" class="checkbox-label">Allow water erosion</label>
+            <label for="changeHeights" class="checkbox-label">允许水的侵蚀作用</label>
           </div>
         </div>
 
         <div>
-          <p>Statistics:</p>
-          <span>Land cells: </span><span id="landmassCounter">0</span>
-          <span style="margin-left:.9em">Mean height: </span><span id="landmassAverage">0</span>
+          <p>统计数据：</p>
+          <span>陆地单元格数：</span><span id="landmassCounter">0</span>
+          <span style="margin-left:.9em">平均高度：</span><span id="landmassAverage">0</span>
         </div>
 
         <div>
-          <p>Cell info:</p>
-          <span>Coord: </span><span id="heightmapInfoX"></span>/<span id="heightmapInfoY"></span><br>
-          <span>Cell: </span><span id="heightmapInfoCell"></span><br>
-          <span>Height: </span><span id="heightmapInfoHeight"></span>
+          <p>单元格信息：</p>
+          <span>坐标：</span><span id="heightmapInfoX"></span>/<span id="heightmapInfoY"></span><br>
+          <span>编号：</span><span id="heightmapInfoCell"></span><br>
+          <span>高度：</span><span id="heightmapInfoHeight"></span>
         </div>
       </div>
 
       <div id="aboutContent" class="tabcontent">
-        <p><a href="https://github.com/Azgaar/Fantasy-Map-Generator" target="_blank">Fantasy Map Generator</a> is a free <a href="https://github.com/Azgaar/Fantasy-Map-Generator/blob/master/LICENSE" target="_blank">open source</a> tool which procedurally generates fantasy maps. You may use auto-generated maps as they are, edit them or even create a new map from scratch. Check out the <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Quick-Start-Tutorial" target="_blank">quick start tutorial</a>, <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Q&A" target="_blank">Q&A</a> and <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Hotkeys" target="_blank">hotkeys</a> for guidance.</p>
-        <p>Join our <a href='https://discordapp.com/invite/X7E84HU' target='_blank'>Discord server</a> and <a href="https://www.reddit.com/r/FantasyMapGenerator/" target="_blank">Reddit community</a> to ask questions, get help and share maps.</p>
-        <p>The project is under active development. Creator and main maintainer: Azgaar. To track the development progress see the <a href="https://trello.com/b/7x832DG4/fantasy-map-generator" target="_blank">devboard</a>. For older versions see the <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Changelog" target="_blank">changelog</a>. Please report bugs <a href="https://github.com/Azgaar/Fantasy-Map-Generator/issues" target="_blank">here</a>. You can also contact me directly via <a href="mailto:azgaar.fmg@yandex.by" target="_blank">email</a>.</p>
+        <p><a href="https://github.com/Azgaar/Fantasy-Map-Generator" target="_blank">幻想地图生成器</a> 是一个自由的、 <a href="https://github.com/Azgaar/Fantasy-Map-Generator/blob/master/LICENSE" target="_blank">开源的</a> 、可用于程序化地生成地图的工具。您可以直接使用自动生成的地图，也可以编辑它们，或是从头开始创建一张新地图。查阅 <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Quick-Start-Tutorial" target="_blank">快速入门指南</a>， <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Q&A" target="_blank">常见问答</a> 与 <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Hotkeys" target="_blank">快捷键指南</a> 以获取帮助。</p>
+        <p>加入我们的 <a href='https://discordapp.com/invite/X7E84HU' target='_blank'>Discord 服务器</a> 和 <a href="https://www.reddit.com/r/FantasyMapGenerator/" target="_blank">Reddit</a> 以和其他用户一起交流讨论、互帮互助。</p>
+        <p>该项目仍在不断开发中。作者与主要维护人员：Azgaar。在 <a href="https://trello.com/b/7x832DG4/fantasy-map-generator" target="_blank">此处</a> 查看项目计划板以追踪开发进度。在 <a href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Changelog" target="_blank">此处</a> 查看项目更新记录。如果您在使用过程中发现任何问题，随时可在 <a href="https://github.com/Azgaar/Fantasy-Map-Generator/issues" target="_blank">此处</a> 反馈。您同样可以通过 <a href="mailto:azgaar.fmg@yandex.by" target="_blank">邮件</a> 直接与我联系。</p>
         <div style="background-color: #e85b46; padding: .4em; width: max-content; margin: .6em auto 0 auto; border: 1px solid #943838">
           <a href="https://www.patreon.com/azgaar" target="_blank" style="color: white; text-decoration: none; font-family: sans-serif">
             <div>
@@ -1927,11 +1926,22 @@
                   <circle cx="362.589996" cy="204.589996" data-fill="1" id="Oval" r="204.589996"></circle>
                   <rect data-fill="2" height="545.799988" id="Rectangle" width="100" x="0" y="0"></rect>
                 </svg>
-              </div>SUPPORT ON PATREON
+              </div>在 PATREON 上支持我们
             </div>
           </a>
         </div>
-        <p>Special thanks to <a data-tip="Click to see list of supporters" onclick="showSupporters()">all supporters</a> on Patreon!</p>
+        <p>特别感谢 Patreon 上的 <a data-tip="Click to see list of supporters" onclick="showSupporters()">所有支持者们</a> ！</p>
+        <br>
+        <div style="background-color: #24292e; padding: .4em; width: max-content; margin: .6em auto 0 auto; border: 1px solid #000000">
+          <a href="https://github.com/zyf722/Fantasy-Map-Generator" target="_blank" style="color: white; text-decoration: none; font-family: sans-serif">
+            <div>
+              <div style="width: .8em; display: inline; padding: 0 .2em; fill: white; vertical-align: middle">
+                <svg viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </div>在 Github 上查看简中汉化项目
+            </div>
+          </a>
+        </div>
+        <p>简中汉化人员：zyf722。</p>
 
         <ul class="share-buttons">
           <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fazgaar.github.io%2FFantasy-Map-Generator%2F&quote=" data-tip="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="images/Facebook.png" /></a></li>
@@ -1943,10 +1953,10 @@
       </div>
 
       <div id="sticked">
-        <button id="newMapButton" data-tip="Generate a new map based on options. Shortcut: F2">New Map</button>
-        <button id="saveButton" data-tip="Select format to save map">Save</button>
-        <button id="loadButton" data-tip="Load fully functional map in a .map format">Load</button>
-        <button id="zoomReset" data-tip="Reset map zoom. Shortcut: 0">Reset Zoom</button>
+        <button id="newMapButton" data-tip="基于设置生成新地图。 (F2)">新建</button>
+        <button id="saveButton" data-tip="导出地图以保存。">保存</button>
+        <button id="loadButton" data-tip="读取 .map 工程文件。">读取</button>
+        <button id="zoomReset" data-tip="重设地图缩放。 (0)">重设缩放</button>
       </div>
 
     </div>
@@ -2104,7 +2114,7 @@
 
       <button id="labelAlign" data-tip="Turn text path into a straight line" class="icon-resize-horizontal"></button>
       <button id="labelLegend" data-tip="Edit free text notes (legend) for this label" class="icon-edit"></button>
-      <button id="labelRemoveSingle" data-tip="Remove the label. Shortcut: Delete" class="icon-trash fastDelete"></button>
+      <button id="labelRemoveSingle" data-tip="Remove the label. （Delete" class="icon-trash fastDelete"></button>
     </div>
 
     <div id="riverEditor" class="dialog" style="display: none">
@@ -2131,7 +2141,7 @@
       <button id="riverElevationProfile" data-tip="Show the elevation profile for the river" class="icon-chart-area"></button>
       <button id="riverNew" data-tip="Create new river clicking on map" class="icon-map-pin"></button>
       <button id="riverLegend" data-tip="Edit free text notes (legend) for the river" class="icon-edit"></button>
-      <button id="riverRemove" data-tip="Remove river. Shortcut: Delete" class="icon-trash fastDelete"></button>
+      <button id="riverRemove" data-tip="Remove river. （Delete" class="icon-trash fastDelete"></button>
     </div>
 
     <div id="elevationProfile" class="dialog" style="display: none" width="100%">
@@ -2170,7 +2180,7 @@
       <button id="routeSplit" data-tip="Click on a control point to split the route" class="icon-unlink"></button>
       <button id="routeLegend" data-tip="Edit free text notes (legend) for the route" class="icon-edit"></button>
       <button id="routeNew" data-tip="Create new route clicking on map" class="icon-map-pin"></button>
-      <button id="routeRemove" data-tip="Remove route. Shortcut: Delete" class="icon-trash fastDelete"></button>
+      <button id="routeRemove" data-tip="Remove route. （Delete" class="icon-trash fastDelete"></button>
     </div>
 
     <div id="lakeEditor" class="dialog" style="display: none">
@@ -2193,7 +2203,7 @@
       <button id="iceRandomize" data-tip="Randomize Iceberd shape" class="icon-shuffle"></button>
       <input id="iceSize" data-tip="Change Iceberg size" type="range" min=".05" max="1" step=".01">
       <button id="iceNew" data-tip="Add an Iceberg (click on map)" class="icon-plus"></button>
-      <button id="iceRemove" data-tip="Remove the element. Shortcut: Delete" class="icon-trash fastDelete"></button>
+      <button id="iceRemove" data-tip="Remove the element. （Delete" class="icon-trash fastDelete"></button>
     </div>
 
     <div id="coastlineEditor" class="dialog" style="display: none">
@@ -2339,7 +2349,7 @@
         <button id="reliefCopy" data-tip="Copy selected relief icon" class="icon-clone"></button>
         <button id="reliefMoveFront" data-tip="Move selected relief icon to front" class="icon-level-up"></button>
         <button id="reliefMoveBack" data-tip="Move selected relief icon back" class="icon-level-down"></button>
-        <button id="reliefRemove" data-tip="Remove selected relief icon. Shortcut: Delete" class="icon-trash fastDelete"></button>
+        <button id="reliefRemove" data-tip="Remove selected relief icon. （Delete" class="icon-trash fastDelete"></button>
       </div>
     </div>
 
@@ -2392,7 +2402,7 @@
         <button id="burgOpenCOA" data-tip="Open burg's COA in the Iron Arachne Heraldry Generator. Ctrl + click to change the seed" class="icon-shield-alt"></button>
         <button id="burgRelocate" data-tip="Relocate burg" class="icon-target"></button>
         <button id="burglLegend" data-tip="Edit free text notes (legend) for this burg" class="icon-edit"></button>
-        <button id="burgRemove" data-tip="Remove non-capital burg. Shortcut: Delete" class="icon-trash fastDelete"></button>
+        <button id="burgRemove" data-tip="Remove non-capital burg. （Delete" class="icon-trash fastDelete"></button>
       </div>
     </div>
 
@@ -2433,7 +2443,7 @@
       <button id="markerToggleBubble" data-tip="Toggle pin (bubble) display" class="icon-info-circled"></button>
       <button id="markerLegendButton" data-tip="Edit place legend (free text notes)" class="icon-edit"></button>
       <button id="markerAdd" data-tip="Add additional marker of that type" class="icon-plus"></button>
-      <button id="markerRemove" data-tip="Remove the marker. Shortcut: Delete" class="icon-trash fastDelete"></button>
+      <button id="markerRemove" data-tip="Remove the marker. （Delete" class="icon-trash fastDelete"></button>
     </div>
 
     <div id="regimentEditor" class="dialog" style="display: none">
@@ -2461,7 +2471,7 @@
         <button id="regimentAttach" data-tip="Attach regiment to another one (include this regiment to another one)" class="icon-attach"></button>
         <button id="regimentRegenerateLegend" data-tip="Regenerate legend for this regiment" class="icon-retweet"></button>
         <button id="regimentLegend" data-tip="Edit free text notes (legend) for this regiment" class="icon-edit"></button>
-        <button id="regimentRemove" data-tip="Remove regiment. Shortcut: Delete" class="icon-trash fastDelete"></button>
+        <button id="regimentRemove" data-tip="Remove regiment. （Delete" class="icon-trash fastDelete"></button>
       </div>
     </div>
 
@@ -2648,7 +2658,7 @@
       </div>
 
       <div id="brushesSliders" style="display: none">
-        <div data-tip="Change brush size. Shortcut: + (increase), – (decrease)" style="padding-bottom: 1px"><div style="width:3.2em; display: inline-block"><i>Radius:</i></div>
+        <div data-tip="Change brush size. （+ (increase), – (decrease)" style="padding-bottom: 1px"><div style="width:3.2em; display: inline-block"><i>Radius:</i></div>
           <input id="brushRadius" oninput="tip('Brush radius: '+this.value); brushRadiusNumber.value = this.value" type="range" min=1 max=50 value=25>
           <input id="brushRadiusNumber" oninput="tip('Brush radius: '+this.value); brushRadius.value = this.value" type="number" min=1 max=50 value=25 style="border: 1px solid #d4d4d4">
         </div>
@@ -2809,7 +2819,7 @@
         <button id="biomesPercentage" data-tip="Toggle percentage / absolute values views" class="icon-percent"></button>
         <button id="biomesManually" data-tip="Manually re-assign biomes to not follow the default moisture/temperature pattern" class="icon-brush"></button>
         <div id="biomesManuallyButtons" style="display: none">
-          <label data-tip="Change brush size. Shortcut: + (increase), – (decrease)" class="italic">Brush radius:
+          <label data-tip="Change brush size. （+ (increase), – (decrease)" class="italic">Brush radius:
             <input id="biomesManuallyBrush" oninput="tip('Brush radius: '+this.value); biomesManuallyBrushNumber.value = this.value" type="range" min="5" max="99" value="15" style="width:4em">
             <input id="biomesManuallyBrushNumber" oninput="tip('Brush radius: '+this.value); biomesManuallyBrush.value = this.value" type="number" min="5" max="99" value="15">
           </label><br>
@@ -2877,7 +2887,7 @@
 
         <button id="statesManually" data-tip="Manually re-assign states" class="icon-brush"></button>
         <div id="statesManuallyButtons" style="display: none">
-          <label data-tip="Change brush size. Shortcut: + (increase), – (decrease)" class="italic">Brush size:
+          <label data-tip="Change brush size. （+ (increase), – (decrease)" class="italic">Brush size:
             <input id="statesManuallyBrush" oninput="tip('Brush size: '+this.value); statesManuallyBrushNumber.value = this.value" type="range" min=5 max=99 value=15 style="width:5em">
             <input id="statesManuallyBrushNumber" oninput="tip('Brush size: '+this.value); statesManuallyBrush.value = this.value" type="number" min=5 max=99 value=15>
           </label><br>
@@ -2994,7 +3004,7 @@
 
         <button id="provincesManually" data-tip="Manually re-assign provinces" class="icon-brush"></button>
         <div id="provincesManuallyButtons" style="display: none">
-          <label data-tip="Change brush size. Shortcut: + (increase), – (decrease)" class="italic">Brush size:
+          <label data-tip="Change brush size. （+ (increase), – (decrease)" class="italic">Brush size:
             <input id="provincesManuallyBrush" oninput="tip('Brush size: '+this.value); provincesManuallyBrushNumber.value = this.value" type="range" min=5 max=99 value=8 style="width:5em">
             <input id="provincesManuallyBrushNumber" oninput="tip('Brush size: '+this.value); provincesManuallyBrush.value = this.value" type="number" min=5 max=99 value=8>
           </label><br>
@@ -3112,7 +3122,7 @@
         <button id="culturesHeirarchy" data-tip="Show cultures hierarchy tree" class="icon-sitemap"></button>
         <button id="culturesManually" data-tip="Manually re-assign cultures" class="icon-brush"></button>
         <div id="culturesManuallyButtons" style="display: none">
-          <label data-tip="Change brush size. Shortcut: + (increase), – (decrease)" class="italic">Brush size:
+          <label data-tip="Change brush size. （+ (increase), – (decrease)" class="italic">Brush size:
             <input id="culturesManuallyBrush" oninput="tip('Brush size: '+this.value); culturesManuallyBrushNumber.value = this.value" type="range" min=5 max=99 value=15 style="width:7em">
             <input id="culturesManuallyBrushNumber" oninput="tip('Brush size: '+this.value); culturesManuallyBrush.value = this.value" type="number" min=5 max=99 value=15>
           </label><br>
@@ -3191,13 +3201,13 @@
 
         <button id="zonesManually" data-tip="Re-assign zones" class="icon-brush"></button>
         <div id="zonesManuallyButtons" style="display: none">
-          <label data-tip="Change brush size. Shortcut: + (increase), – (decrease)" class="italic">Brush:
+          <label data-tip="Change brush size. （+ (increase), – (decrease)" class="italic">Brush:
             <input id="zonesBrush" oninput="tip('Brush size: '+this.value); zonesBrushNumber.value = this.value" type="range" min=5 max=25 value=7 style="width:7em">
             <input id="zonesBrushNumber" oninput="tip('Brush size: '+this.value); zonesBrush.value = this.value" type="number" min=5 max=25 value=7>
           </label><br>
           <button id="zonesManuallyApply" data-tip="Apply assignment" class="icon-check"></button>
           <button id="zonesManuallyCancel" data-tip="Cancel assignment" class="icon-cancel"></button>
-          <button id="zonesRemove" data-tip="Click to toggle the removal mode on brush dragging. Shortcut: ctrl" class="icon-eraser"></button>
+          <button id="zonesRemove" data-tip="Click to toggle the removal mode on brush dragging. （ctrl" class="icon-eraser"></button>
         </div>
 
         <button id="zonesAdd" data-tip="Add a new zone layer" class="icon-plus"></button>
@@ -3252,7 +3262,7 @@
 
         <button id="religionsManually" data-tip="Manually re-assign religions" class="icon-brush"></button>
         <div id="religionsManuallyButtons" style="display: none">
-          <label data-tip="Change brush size. Shortcut: + (increase), – (decrease)" class="italic">Brush size:
+          <label data-tip="Change brush size. （+ (increase), – (decrease)" class="italic">Brush size:
             <input id="religionsManuallyBrush" oninput="tip('Brush size: '+this.value); religionsManuallyBrushNumber.value = this.value" type="range" min=5 max=99 value=15 style="width:7em">
             <input id="religionsManuallyBrushNumber" oninput="tip('Brush size: '+this.value); religionsManuallyBrush.value = this.value" type="number" min=5 max=99 value=15>
           </label><br>
@@ -3646,7 +3656,7 @@
         <button onclick="savePNG()" data-tip="Download visible part of the map as .png (lossless compressed)">.png</button>
         <button onclick="saveJPEG()" data-tip="Download visible part of the map as .jpeg (lossy compressed) image">.jpeg</button>
         <button onclick="saveGeoJSON()" data-tip="Download map data in GeoJSON format">.json</button>
-        <button onclick="quickSave()" data-tip="Save fully-functional map to browser storage. Shortcut: F6">storage</button>
+        <button onclick="quickSave()" data-tip="Save fully-functional map to browser storage. （F6">storage</button>
       </div>
       <p style="font-style: italic">Generator uses pop-up window to download files. Please ensure your browser does not block popups</p>
       <div data-tip="Define scale of a saved png/jpeg image (e.g. 5x). Saving big images is slow and may cause a browser crash!" style="margin-bottom: .3em">
